@@ -4,6 +4,7 @@ describe('Guru Bank Automation', () => {
     before(() => {
         // Ignore specific uncaught exceptions
         Cypress.on('uncaught:exception', (err, runnable) => {
+
           // Ignore errors containing "txtaccno" in the message
           if (err.message.includes('txtaccno')) {
             return false;
@@ -15,6 +16,7 @@ describe('Guru Bank Automation', () => {
 
     beforeEach(() => {
         cy.visit('https://demo.guru99.com/V4/');
+
     // Enter UserID
     cy.get(':nth-child(1) > :nth-child(2) > input').type('mngr574432');
 
@@ -37,7 +39,7 @@ it('should add a new customer', () => {
     cy.get('.heading3').contains('Add New Customer');
 
     // Enter Customer Name
-    cy.get(':nth-child(4) > :nth-child(2) > input').type('Nana Kwame');
+    cy.get(':nth-child(4) > :nth-child(2) > input').type('Getty Abena Abigail');
 
     // Select the Male radio button
     cy.get('[value="m"]').check();
@@ -49,46 +51,42 @@ it('should add a new customer', () => {
      cy.get('[value="f"]').should('not.be.checked');
 
     // Enter Date
-    cy.get('input[name="dob"]').type('2022-01-23');
+    cy.get('input[name="dob"]').type('2023-01-19');
 
     // Enter Address
-    cy.get('textarea[name="addr"]').type('Osu Oxford Street');
+    cy.get('textarea[name="addr"]').type('Anaji Queen Of Peace');
 
     // Enter customer city
-    cy.get('input[name="city"]').type('Accra Ghana');
+    cy.get('input[name="city"]').type('Takoradi');
 
     // Enter customer State
-    cy.get('input[name="state"]').type('Greater Accra');
+    cy.get('input[name="state"]').type('Choice Mart');
 
     // Enter customer PIN
-    cy.get('input[name="pinno"]').type('333444');
+    cy.get('input[name="pinno"]').type('999666');
 
     // Enter customer mobile Number
-    cy.get('input[name="telephoneno"]').type('0550888743');
+    cy.get('input[name="telephoneno"]').type('0557298173');
 
      // Enter customer mobile Number
-     cy.get('input[name="emailid"]').type('nanakwame002@gmail.com');
+     cy.get('input[name="emailid"]').type('gettyabigail003@gmail.com');
 
      // Enter customer password
-     cy.get('input[name="password"]').type('N@n@.Kw@m3');
+     cy.get('input[name="password"]').type('Just!c3.@bb@n');
 
      // Click on submit
      cy.get('input[name="sub"]').click();
 
-      // Verify the new customer creation
+        // Verify the new customer creation
     cy.url().should('include', 'CustomerRegMsg.php');
     cy.get('p.heading3').should('contain.text', 'Customer Registered Successfully!!!');
-  
-      // Capture and verify the customer ID
+
+    // Capture and verify the customer ID
     cy.get('td:contains("Customer ID") + td').invoke('text').then((customerId) => {
-        cy.log('Customer ID:', customerId);
-        // Ensure the customer ID is not empty
-        cy.wrap(customerId).should('not.be.empty');
+      cy.log('Customer ID:', customerId);
+      // Ensure the customer ID is not empty
+      cy.wrap(customerId).should('not.be.empty');
       });
 
       });
 });
-
-/*Customer ID	28482
-
- */
