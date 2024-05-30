@@ -20,8 +20,3 @@ describe('Guru99 Bank Automation', () => {
     cy.url().should('include', 'https://demo.guru99.com/V4/manager/Managerhomepage.php');
   });
 });
-
-
-
-//User ID :	mngr574432
-//Password :	YdetYpu
