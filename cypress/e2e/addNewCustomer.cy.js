@@ -28,7 +28,7 @@ describe('Guru Bank Automation', () => {
     cy.wait(2000);
 
     // Verify that the manager has login 
-    cy.url().should('include', 'https://demo.guru99.com/V4/manager/Managerhomepage.php');
+    cy.url().should('include', '/Managerhomepage.php');
       });
 
 it('should add a new customer', () => {
@@ -39,7 +39,7 @@ it('should add a new customer', () => {
     cy.get('.heading3').contains('Add New Customer');
 
     // Enter Customer Name
-    cy.get(':nth-child(4) > :nth-child(2) > input').type('Getty Abena Abigail');
+    cy.get(':nth-child(4) > :nth-child(2) > input').type('Kenneth Atta Oppong');
 
     // Select the Male radio button
     cy.get('[value="m"]').check();
@@ -50,7 +50,7 @@ it('should add a new customer', () => {
     // Verify the female radio buton is not checked
      cy.get('[value="f"]').should('not.be.checked');
 
-    // Enter Date
+    // Enter Date of Birth
     cy.get('input[name="dob"]').type('2023-01-19');
 
     // Enter Address
@@ -63,22 +63,22 @@ it('should add a new customer', () => {
     cy.get('input[name="state"]').type('Choice Mart');
 
     // Enter customer PIN
-    cy.get('input[name="pinno"]').type('999666');
+    cy.get('input[name="pinno"]').type('999667');
 
     // Enter customer mobile Number
     cy.get('input[name="telephoneno"]').type('0557298173');
 
      // Enter customer mobile Number
-     cy.get('input[name="emailid"]').type('gettyabigail003@gmail.com');
+     cy.get('input[name="emailid"]').type('kennethoppong03@gmail.com');
 
      // Enter customer password
-     cy.get('input[name="password"]').type('Just!c3.@bb@n');
+     cy.get('input[name="password"]').type('Koppon.@bb@n');
 
      // Click on submit
      cy.get('input[name="sub"]').click();
 
         // Verify the new customer creation
-    cy.url().should('include', 'CustomerRegMsg.php');
+    cy.url().should('include', '/CustomerRegMsg.php');
     cy.get('p.heading3').should('contain.text', 'Customer Registered Successfully!!!');
 
     // Capture and verify the customer ID

@@ -33,13 +33,13 @@ describe('Guru99 Bank Automation', () => {
       cy.get('.menusubnav > :nth-child(5) > a').click();
 
       // Verify that the New Account Page Url exists
-      cy.url().should('include', 'https://demo.guru99.com/V4/manager/addAccount.php');
+      cy.url().should('include', '/addAccount.php');
 
       // Verify that the New Account Page has "Add new account form" text
       cy.get('.heading3').contains('Add new account form');
 
       // Enter customer ID
-      cy.get(':nth-child(2) > :nth-child(2) > input').type('94401');
+      cy.get(':nth-child(2) > :nth-child(2) > input').type('65110');//135489, 135490 Account ID
 
       // Select Account Type
       cy.get('select[name="selaccount"]').select('Current');

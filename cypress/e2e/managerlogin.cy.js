@@ -17,6 +17,6 @@ describe('Guru99 Bank Automation', () => {
     cy.get('[type="submit"]').click();
 
     // Verify that the manager has login 
-    cy.url().should('include', 'https://demo.guru99.com/V4/manager/Managerhomepage.php');
+    cy.url().should('include', '/Managerhomepage.php');
   });
 });
