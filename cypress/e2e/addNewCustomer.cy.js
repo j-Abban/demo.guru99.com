@@ -39,7 +39,7 @@ it('should add a new customer', () => {
     cy.get('.heading3').contains('Add New Customer');
 
     // Enter Customer Name
-    cy.get(':nth-child(4) > :nth-child(2) > input').type('Kenneth Atta Oppong');
+    cy.get(':nth-child(4) > :nth-child(2) > input').type('Oliver Adamptey');
 
     // Select the Male radio button
     cy.get('[value="m"]').check();
@@ -51,28 +51,28 @@ it('should add a new customer', () => {
      cy.get('[value="f"]').should('not.be.checked');
 
     // Enter Date of Birth
-    cy.get('input[name="dob"]').type('2023-01-19');
+    cy.get('input[name="dob"]').type('1997-07-24');
 
     // Enter Address
-    cy.get('textarea[name="addr"]').type('Anaji Queen Of Peace');
+    cy.get('textarea[name="addr"]').type('Takoradi Technical University Main Campus');
 
     // Enter customer city
     cy.get('input[name="city"]').type('Takoradi');
 
     // Enter customer State
-    cy.get('input[name="state"]').type('Choice Mart');
+    cy.get('input[name="state"]').type('Newsite');
 
     // Enter customer PIN
-    cy.get('input[name="pinno"]').type('999667');
+    cy.get('input[name="pinno"]').type('555666');
 
     // Enter customer mobile Number
-    cy.get('input[name="telephoneno"]').type('0557298173');
+    cy.get('input[name="telephoneno"]').type('050877783');
 
      // Enter customer mobile Number
-     cy.get('input[name="emailid"]').type('kennethoppong03@gmail.com');
+     cy.get('input[name="emailid"]').type('oliver.adamptey@amalitech.com');
 
      // Enter customer password
-     cy.get('input[name="password"]').type('Koppon.@bb@n');
+     cy.get('input[name="password"]').type('oliv3r.@d@mt3y');
 
      // Click on submit
      cy.get('input[name="sub"]').click();
@@ -87,6 +87,5 @@ it('should add a new customer', () => {
       // Ensure the customer ID is not empty
       cy.wrap(customerId).should('not.be.empty');
       });
-
       });
 });

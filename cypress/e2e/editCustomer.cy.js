@@ -38,9 +38,9 @@ describe('Guru Bank Automation', () => {
         cy.get('.heading3').contains('Edit Customer Form');
         
         // Enter customer ID
-        const customerID = "94401";
+        const customerId = "94401";
 
-        cy.get('input[name="cusid"]').type('65110'); //94401
+        cy.get('input[name="cusid"]').type(customerId); //94401 //65110 //26588
 
          // Submit the form to load customer details
          cy.get('input[name="AccSubmit"]').click();
@@ -51,16 +51,16 @@ describe('Guru Bank Automation', () => {
          cy.wait(2000);
 
          // Edit Customer details
-         cy.get('input[name="name"]').should('be.disabled');
-         cy.get('input[name="name"]').invoke('removeAttr', 'disabled').clear().type('Oppong Attah Kenneth', {force: true});
+         cy.get('input[name="name"]').should('be.disabled'); // Verify that the field is disabled
+         cy.get('input[name="name"]').invoke('removeAttr', 'disabled').clear().type('Oliver Adamptey Junior', {force: true});
          cy.get('input[name="dob"]').should('be.disabled'); // Verify that the field is disabled
-         cy.get('input[name="dob"]').invoke('removeAttr', 'disabled').clear().type('1998-07-21', {force: true});
-         cy.get('textarea[name="addr"]').clear().type('Market Circle Takoradi');
-         cy.get('input[name="city"]').clear().type('Accra Ghana');
-         cy.get('input[name="state"]').clear().type('East Legon');
-         cy.get('input[name="pinno"]').clear().type('999667');
+         cy.get('input[name="dob"]').invoke('removeAttr', 'disabled').clear().type('1996-07-26', {force: true});
+         cy.get('textarea[name="addr"]').clear().type('Takoradi Technical University, BU Campus');
+         cy.get('input[name="city"]').clear().type('Takoradi Ghana');
+         cy.get('input[name="state"]').clear().type('Effia-Kwasimintsim');
+         cy.get('input[name="pinno"]').clear().type('666555');
          cy.get('input[name="telephoneno"]').clear().type('+233557298173');
-         cy.get('input[name="emailid"]').clear().type('ec2007@gmail.com');
+         cy.get('input[name="emailid"]').clear().type('oliveradamptey003@gmail.com');
 
          // Click on submit to update customer details
          cy.get('input[name="sub"]').click();

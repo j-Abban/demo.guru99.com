@@ -39,13 +39,14 @@ describe('Guru99 Bank Automation', () => {
       cy.get('.heading3').contains('Add new account form');
 
       // Enter customer ID
-      cy.get(':nth-child(2) > :nth-child(2) > input').type('65110');//135489, 135490 Account ID
+      const customerId = "26588";
+      cy.get(':nth-child(2) > :nth-child(2) > input').type(customerId); //65110 //135489, 135490 Account ID
 
       // Select Account Type
       cy.get('select[name="selaccount"]').select('Current');
 
       // Enter amount for initial deposite
-      cy.get(':nth-child(4) > :nth-child(2) > input').type('5000');
+      cy.get(':nth-child(4) > :nth-child(2) > input').type('7000');
 
       // Click on submit button
       cy.get('[type="submit"]').click();
