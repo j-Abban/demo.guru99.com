@@ -30,7 +30,7 @@ before(() =>{
 
     it('should delete an existing Customer', () => {
     // Navigate to "Delete Customer" Page
-    cy.get('.menusubnav > :nth-child(4) > a').click();
+    cy.contains('Delete Customer').click();
 
     // Verify that the delete customer page contains "Delete Customer Form" text
     cy.get('p[class="heading3"]').contains('Delete Customer Form');
