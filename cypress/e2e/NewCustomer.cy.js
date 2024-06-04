@@ -39,7 +39,7 @@ it('should add a new customer', () => {
     cy.get('.heading3').contains('Add New Customer');
 
     // Enter Customer Name
-    cy.get(':nth-child(4) > :nth-child(2) > input').type('Oliver Adamptey');
+    cy.get(':nth-child(4) > :nth-child(2) > input').type('Edward Koomson');
 
     // Select the Male radio button
     cy.get('[value="m"]').check();
@@ -51,28 +51,28 @@ it('should add a new customer', () => {
      cy.get('[value="f"]').should('not.be.checked');
 
     // Enter Date of Birth
-    cy.get('input[name="dob"]').type('1997-07-24');
+    cy.get('input[name="dob"]').type('1987-07-24');
 
     // Enter Address
-    cy.get('textarea[name="addr"]').type('Takoradi Technical University Main Campus');
+    cy.get('textarea[name="addr"]').type('University of Washington');
 
     // Enter customer city
-    cy.get('input[name="city"]').type('Takoradi');
+    cy.get('input[name="city"]').type('Washington');
 
     // Enter customer State
-    cy.get('input[name="state"]').type('Newsite');
+    cy.get('input[name="state"]').type('Washington');
 
     // Enter customer PIN
-    cy.get('input[name="pinno"]').type('555666');
+    cy.get('input[name="pinno"]').type('444666');
 
     // Enter customer mobile Number
-    cy.get('input[name="telephoneno"]').type('050877783');
+    cy.get('input[name="telephoneno"]').type('0504570972');
 
      // Enter customer mobile Number
-     cy.get('input[name="emailid"]').type('oliver.adamptey@amalitech.com');
+     cy.get('input[name="emailid"]').type('edward.koomson@amalitech.com');
 
      // Enter customer password
-     cy.get('input[name="password"]').type('oliv3r.@d@mt3y');
+     cy.get('input[name="password"]').type('edward.123Kooms!n');
 
      // Click on submit
      cy.get('input[name="sub"]').click();
