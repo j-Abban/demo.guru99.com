@@ -8,10 +8,10 @@ describe('Guru99 Bank Automation', () => {
   it('should login as manager', () => {
   
     // Enter UserID
-    cy.get(':nth-child(1) > :nth-child(2) > input').type('mngr574432');
+    cy.get('input[name="uid"]').type('mngr574432');
 
     // Enter Password 
-    cy.get(':nth-child(2) > :nth-child(2) > input').type('YdetYpu');
+    cy.get('input[name="password"]').type('YdetYpu');
 
     // Click on login button
     cy.get('[type="submit"]').click();
