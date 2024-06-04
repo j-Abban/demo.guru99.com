@@ -33,7 +33,7 @@ describe('Guru Bank Automation', () => {
 
 it('should add a new customer', () => {
     //Navigate to new Customer
-    cy.get('.menusubnav > :nth-child(2) > a').click();
+    cy.contains('New Customer').click();
 
     // Verify the add new customer page conatains "Add New Customer" text
     cy.get('.heading3').contains('Add New Customer');

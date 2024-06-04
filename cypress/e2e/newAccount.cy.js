@@ -30,7 +30,7 @@ describe('Guru99 Bank Automation', () => {
 
     it('should create a new account for and existing customer', () => {
       // Click on New Account link
-      cy.get('.menusubnav > :nth-child(5) > a').click();
+      cy.contains('New Account').click();
 
       // Verify that the New Account Page Url exists
       cy.url().should('include', '/addAccount.php');

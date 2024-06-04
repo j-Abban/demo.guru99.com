@@ -32,7 +32,7 @@ describe('Guru Bank Automation', () => {
 
       it('should navigates to Edit Customer Page', () =>{
         // Navigate to the  "Edit Customer" page
-        cy.get('.menusubnav > :nth-child(3) > a').click();
+        cy.contains('Edit Customer').click();
 
         // Verify the Edit Customer page contains "Edit Customer Form" text
         cy.get('.heading3').contains('Edit Customer Form');

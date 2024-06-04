@@ -16,7 +16,7 @@ describe('Guru99 Bank Automation', () => {
  
   });
 
-  it('should login as manager', () => {
+  it('should login as Manager', () => {
     // Verify that the manager has login 
     cy.contains('Manger Id : mngr574432').should('be.visible');
     cy.url().should('include', '/Managerhomepage.php');
