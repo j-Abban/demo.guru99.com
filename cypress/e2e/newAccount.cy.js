@@ -39,7 +39,7 @@ describe('Guru99 Bank Automation', () => {
       cy.get('.heading3').contains('Add new account form');
 
       // Enter customer ID
-      const customerId = "94138"; // account : 	135583
+      const customerId = 94138; // account : 	135583
       cy.get(':nth-child(2) > :nth-child(2) > input').type(customerId); //65110 //135489, 135490 Account ID
 
       // Select Account Type
