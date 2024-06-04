@@ -30,14 +30,14 @@ before(() =>{
 
     it('should delete an existing Customer', () => {
     // Navigate to "Delete Customer" Page
-    cy.contains('Delete Customer').click();
+    cy.get('.menusubnav > :nth-child(4) > a').click();
 
     // Verify that the delete customer page contains "Delete Customer Form" text
     cy.get('p[class="heading3"]').contains('Delete Customer Form');
     cy.pause(2000);
 
     // Enter customer ID and confirm the deletion
-    const customerId = '31002';
+    const customerId = '94138';
     cy.get('input[name="cusid"]').type(customerId);
 
     // Submit the form to delete the customer

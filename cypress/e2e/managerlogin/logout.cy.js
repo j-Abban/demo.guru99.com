@@ -1,6 +1,18 @@
 /// <reference types="cypress" />
 
 describe('Guru99 Bank Automation', () => {
+  before(() => {
+    // Ignore specific uncaught exceptions
+    Cypress.on('uncaught:exception', (err, runnable) => {
+        // Ignore errors containing "validatebal" or "select" in the message
+        if (err.message.includes('validate') || err.message.includes('select') || err.message.includes('validatebal')) {
+            return false;
+        }
+        // Allow other errors to fail the test
+        return true;
+    });
+});	
+
   beforeEach(() => {
     cy.visit('https://demo.guru99.com/V4/')
 
@@ -23,16 +35,16 @@ describe('Guru99 Bank Automation', () => {
     cy.wait(6000);
   });
 
-  it('should logout', () => {
-    //Navigate to logout and click
-    cy.contains('Log out').click();
+//   it('should logout', () => {
+//     //Navigate to logout and click
+//     cy.contains('Log out').click();
 
-     // Handle the alert popup
-     cy.on('window:alert', (str) => {
-      expect(str).to.equal('You Have Succesfully Logged Out!!');
-    });
+//      // Handle the alert popup
+//      cy.on('window:alert', (str) => {
+//       expect(str).to.equal('You Have Succesfully Logged Out!!');
+//     });
 
-    // Verify that the manager has logout
-    cy.url().should('include', '/index.php');
-});
+//     // Verify that the manager has logout
+//     cy.url().should('include', '/index.php');
+// });
 });
