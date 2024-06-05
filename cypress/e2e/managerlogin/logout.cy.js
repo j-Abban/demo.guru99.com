@@ -35,16 +35,16 @@ describe('Guru99 Bank Automation', () => {
     cy.wait(6000);
   });
 
-//   it('should logout', () => {
-//     //Navigate to logout and click
-//     cy.contains('Log out').click();
+  it('should logout', () => {
+    //Navigate to logout and click
+    cy.contains('Log out').click();
 
-//      // Handle the alert popup
-//      cy.on('window:alert', (str) => {
-//       expect(str).to.equal('You Have Succesfully Logged Out!!');
-//     });
+     // Handle the alert popup
+     cy.on('window:alert', (str) => {
+      expect(str).to.equal('You Have Succesfully Logged Out!!');
+    });
 
-//     // Verify that the manager has logout
-//     cy.url().should('include', '/index.php');
-// });
+    // Verify that the manager has logout
+     cy.url().should('include', '/index.php');
+});
 });
